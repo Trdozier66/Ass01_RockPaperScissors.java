@@ -43,16 +43,15 @@ public class Ass01_RockPaperScissors {
             return "It's a Tie!";
         }
 
-        switch (playerAChoice.toUpperCase()) {
-            case "R":
-                return playerBChoice.equalsIgnoreCase("S") ? "Player A wins! Rock breaks Scissors." : "Player B wins! Paper covers Rock.";
-            case "P":
-                return playerBChoice.equalsIgnoreCase("R") ? "Player A wins! Paper covers Rock." : "Player B wins! Scissors cuts Paper.";
-            case "S":
-                return playerBChoice.equalsIgnoreCase("P") ? "Player A wins! Scissors cuts Paper." : "Player B wins! Rock breaks Scissors.";
-            default:
-                return "Invalid input.";
-        }
+        return switch (playerAChoice.toUpperCase()) {
+            case "R" ->
+                    playerBChoice.equalsIgnoreCase("S") ? "Player A wins! Rock breaks Scissors." : "Player B wins! Paper covers Rock.";
+            case "P" ->
+                    playerBChoice.equalsIgnoreCase("R") ? "Player A wins! Paper covers Rock." : "Player B wins! Scissors cuts Paper.";
+            case "S" ->
+                    playerBChoice.equalsIgnoreCase("P") ? "Player A wins! Scissors cuts Paper." : "Player B wins! Rock breaks Scissors.";
+            default -> "Invalid input.";
+        };
     }
 }
 
